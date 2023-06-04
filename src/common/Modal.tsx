@@ -43,7 +43,8 @@ const ModalContainer = styled.div`
 `
 
 const ModalContent = styled.div`
- 
+  padding: 50px;
+  background-color: white;
 `
 
 export default Modal;

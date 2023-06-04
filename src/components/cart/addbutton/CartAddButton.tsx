@@ -27,8 +27,7 @@ const CartAddButton: React.FC<CardAddButtonProps> = ({productId, selectedOption,
     }>(selectedOption);
 
     const handleClickAddButton = () => {
-        // 옵션이 없거나 옵션이 선택 되있는 경우 => 수량 체크
-        if (!data?.options && selectedOption) {
+        if (!!selectedOption || !data?.options) {
             setModalStatus("AMOUNT");
         } else {
             setModalStatus("OPTION");
