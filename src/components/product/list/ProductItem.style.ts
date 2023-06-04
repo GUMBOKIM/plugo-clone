@@ -16,12 +16,12 @@ export const ImageWrapper = styled.div`
   height: 200px;
 `
 
-export const Stock = styled.div<{ isStock: boolean }>`
+export const Stock = styled.div<{ stock: boolean }>`
   position: absolute;
   bottom: 2px;
   left: 2px;
 
-  ${({isStock}) => isStock ?
+  ${({stock}) => stock ?
           css`
             background-color: white;
             color: black;

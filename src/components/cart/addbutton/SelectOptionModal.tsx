@@ -35,7 +35,7 @@ const SelectOptionModal: React.FC<SelectOptionModalProps> = ({options, setOption
                     <OptionList>
                         {option.items.map(item => (
                             <OptionListItem key={item.itemId}
-                                            isAvailable={item.stock > 0}
+                                            available={item.stock > 0}
                                             onClick={() => handleClickOptionItem(option.optionId, item.itemId, item.price)}>
                                 <span>{item.itemName}</span>
                                 <span>{item.price}</span>
@@ -57,12 +57,12 @@ const OptionList = styled.ul`
   gap: 10px;
 `
 
-const OptionListItem = styled.li<{ isAvailable: boolean }>`
+const OptionListItem = styled.li<{ available: boolean }>`
   all: unset;
 
   border: gray 1px solid;
 
-  ${({isAvailable}) => isAvailable ? css`
+  ${({available}) => available ? css`
 
   ` : css`
     background-color: red

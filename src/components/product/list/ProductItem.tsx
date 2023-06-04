@@ -19,10 +19,10 @@ const ProductItem: React.FC<ProductItemProps> = ({id, name, price, imgUrl, isSto
         <S.Container onClick={handleClickItem}>
             <S.ImageWrapper>
                 <img width="100%" height="100%" src={imgUrl} alt={`상품-${id} 이미지`}/>
-                <S.Stock isStock={isStock}>{isStock ? "재고 있음" : "재고 없음"}</S.Stock>
+                <S.Stock stock={isStock}>{isStock ? "재고 있음" : "재고 없음"}</S.Stock>
             </S.ImageWrapper>
             <S.ColorOptions>
-                {colorOptions?.map(color => <S.Color color={color}/>)}
+                {colorOptions?.map(color => <S.Color key={color} color={color}/>)}
             </S.ColorOptions>
             <S.Name>{name}</S.Name>
             <S.Price>{price}</S.Price>

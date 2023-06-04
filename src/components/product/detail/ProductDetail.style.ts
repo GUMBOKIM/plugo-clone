@@ -37,8 +37,8 @@ export const RightSection = styled.div`
   gap: 5px;
 `
 
-export const Stock = styled.div<{ isStock: boolean }>`
-  ${({isStock}) => isStock ?
+export const Stock = styled.div<{ stock: boolean }>`
+  ${({stock}) => stock ?
           css`
             background-color: white;
             color: black;

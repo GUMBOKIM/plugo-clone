@@ -24,9 +24,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({productId}) => {
                 <img width="100%" src={data.images[selectedImg]} alt={`상품-${productId}`} />
                 <S.ImageSelect>
                     {data.images.map((imageUrl, index) => (
-                        <S.ImageSelectItem>
-                            <img key={index + " "}
-                                 width="100%"
+                        <S.ImageSelectItem key={imageUrl}>
+                            <img width="100%"
                                  src={imageUrl}
                                  alt={`상품-${productId}-${index}`}
                                  onClick={() => handleClickImageSelectItem(index)}/>
@@ -35,14 +34,14 @@ const ProductDetail: React.FC<ProductDetailProps> = ({productId}) => {
                 </S.ImageSelect>
             </S.LeftSection>
             <S.RightSection>
-                <S.Stock isStock={data.isStock}>
+                <S.Stock stock={data.isStock}>
                     {data.isStock ? "재고 있음" : "재고 없음"}
                 </S.Stock>
                 <S.Name>{data.name}</S.Name>
                 <S.Price>{data.price}</S.Price>
                 <S.Content>{data.desc}</S.Content>
                 <CartAddButton productId={productId} size="LARGE"/>
-                {data.options?.map(option => <ProductOption productId={productId} {...option}/>)}
+                {data.options?.map(option => <ProductOption key={option.optionId} productId={productId} {...option}/>)}
             </S.RightSection>
         </S.Container>
     )

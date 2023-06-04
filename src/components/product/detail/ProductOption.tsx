@@ -21,7 +21,7 @@ const ProductOption: React.FC<ProductOptionProps> = ({productId, optionId, optio
             <S.OptionName>{optionName}</S.OptionName>
             <S.OptionList>
                 {items.map(item => (
-                    <S.OptionItem>
+                    <S.OptionItem key={item.itemId}>
                         <S.OptionItemImg src={item.images[0]} alt={`옵션-${optionId}-${item.itemId}`}/>
                         <S.OptionContentWrapper>
                             <span>{item.itemName}</span>
