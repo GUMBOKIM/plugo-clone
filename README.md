@@ -9,8 +9,8 @@ Bonus:
 - Bonus: Backend with required API
 
 ## MVP
-- Admin: Create Product
-- Product List
-- Product Detail Page
+- Admin: Create ProductData
+- ProductData List
+- ProductData Detail Page
 - Add to CartPage Button
 - CartPage Detail Page
