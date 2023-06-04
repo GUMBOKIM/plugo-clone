@@ -14,6 +14,7 @@ export interface Product {
            itemName: string;
            images: string[];
            stock: number;
+           price: number;
         }[]
     }[];
 }
@@ -89,19 +90,22 @@ const ProductData: Product[]  = [
                         itemId: 1,
                         itemName: "샤미드",
                         images: ["https://data1.pokemonkorea.co.kr/newdata/pokedex/full/013401.png"],
-                        stock: 100
+                        stock: 100,
+                        price: 40001,
                     },
                     {
                         itemId: 2,
                         itemName: "쥬피썬더",
                         images: ["https://data1.pokemonkorea.co.kr/newdata/pokedex/full/013501.png"],
-                        stock: 200
+                        stock: 200,
+                        price: 40002,
                     },
                     {
-                        itemId: 1,
+                        itemId: 3,
                         itemName: "부스터",
                         images: ["https://data1.pokemonkorea.co.kr/newdata/pokedex/full/013601.png"],
-                        stock: 0
+                        stock: 0,
+                        price: 40000,
                     }
                 ]
             }
