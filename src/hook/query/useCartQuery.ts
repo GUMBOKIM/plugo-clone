@@ -16,7 +16,7 @@ const useCartQuery = () => {
         onSuccess: () => queryClient.invalidateQueries([queryKey.cart])
     })
 
-    const getCartItems = useQuery({
+    const useFetchCartItems = () => useQuery({
         queryKey: [queryKey.cart],
         queryFn: CartRepository.getCartItemList
     })
@@ -24,7 +24,7 @@ const useCartQuery = () => {
     return {
         addCartItem,
         removeCartItem,
-        getCartItems
+        useFetchCartItems
     }
 }
 

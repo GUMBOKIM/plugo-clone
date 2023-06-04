@@ -45,7 +45,7 @@ const ProductData: Product[]  = [
         desc: "비가 내린 다음 날은 등의 꽃향기가 강해진다. 향기에 이끌려 포켓몬이 모여든다.",
         price: 30000,
         isStock: false,
-        stock: 100,
+        stock: 0,
         images: ["https://data1.pokemonkorea.co.kr/newdata/pokedex/full/000301.png"]
     },
     {
@@ -72,7 +72,7 @@ const ProductData: Product[]  = [
         desc: "힘든 싸움을 경험한 리자몽일수록 불꽃 온도가 높아진다고 전해진다.",
         price: 30000,
         isStock: false,
-        stock: 100,
+        stock: 0,
         images: ["https://data1.pokemonkorea.co.kr/newdata/pokedex/full/000601.png"]
     },
     {
