@@ -13,7 +13,7 @@ interface ProductItemProps {
 
 const ProductItem: React.FC<ProductItemProps> = ({id, name, price, imgUrl, isStock, colorOptions}) => {
     const navigate = useNavigate();
-    const handleClickItem = () => navigate(`product/${id}`);
+    const handleClickItem = () => navigate(`/product/${id}`);
 
     return (
         <S.Container onClick={handleClickItem}>

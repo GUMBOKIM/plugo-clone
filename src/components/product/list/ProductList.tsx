@@ -8,8 +8,6 @@ const ProductList = () => {
 
     if (isLoading) <div>...Loading</div>
 
-    console.log(data);
-
     return <S.Container>
         {data?.map(item => (
             <ProductItem key={item.productId}
