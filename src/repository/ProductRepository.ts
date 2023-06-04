@@ -8,6 +8,7 @@ class ProductAPI {
             productId: newProductId,
             ...product
         })
+        return newProductId;
     }
 
     async getProductList() {
