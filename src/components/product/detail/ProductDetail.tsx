@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import useProductQuery from "../../../hook/query/useProductQuery";
 import * as S from "./ProductDetail.style";
 import ProductOption from "./ProductOption";
+import CartAddButton from "../../cart/addbutton/CartAddButton";
 
 interface ProductDetailProps {
     productId: number;
@@ -12,7 +13,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({productId}) => {
 
     const [selectedImg, setSelectedImg] = useState(0);
     const handleClickImageSelectItem = (index : number) => setSelectedImg(index);
-
 
     const {isLoading, data} = useFetchProductDetail(productId);
 
@@ -41,7 +41,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({productId}) => {
                 <S.Name>{data.name}</S.Name>
                 <S.Price>{data.price}</S.Price>
                 <S.Content>{data.desc}</S.Content>
-                {data.options?.map(option => <ProductOption {...option}/>)}
+                <CartAddButton productId={productId} size="LARGE"/>
+                {data.options?.map(option => <ProductOption productId={productId} {...option}/>)}
             </S.RightSection>
         </S.Container>
     )

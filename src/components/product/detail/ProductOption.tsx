@@ -1,7 +1,9 @@
 import * as S from "./ProductOption.style"
 import React from "react";
+import CartAddButton from "../../cart/addbutton/CartAddButton";
 
 interface ProductOptionProps {
+    productId: number;
     optionId: number;
     optionName: string;
     items: {
@@ -13,7 +15,7 @@ interface ProductOptionProps {
     }[]
 }
 
-const ProductOption: React.FC<ProductOptionProps> = ({optionId, optionName, items}) => {
+const ProductOption: React.FC<ProductOptionProps> = ({productId, optionId, optionName, items}) => {
     return (
         <S.Container>
             <S.OptionName>{optionName}</S.OptionName>
@@ -25,6 +27,7 @@ const ProductOption: React.FC<ProductOptionProps> = ({optionId, optionName, item
                             <span>{item.itemName}</span>
                             <span>{item.price}</span>
                         </S.OptionContentWrapper>
+                        <CartAddButton productId={productId} size="SMALL" selectedOption={{optionId, itemId: item.itemId}}/>
                     </S.OptionItem>
                 ))}
             </S.OptionList>
