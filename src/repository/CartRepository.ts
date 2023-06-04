@@ -3,7 +3,7 @@ import CartData, {Cart} from "./data/CartData";
 class CartAPI {
     data = CartData;
 
-    addCartItem(productInfo: Omit<Cart, 'cartItemId'>) {
+    async addCartItem(productInfo: Omit<Cart, 'cartItemId'>) {
         const newCartItemId = this.data[this.data.length - 1].cartItemId;
         this.data.push({
             cartItemId: newCartItemId,
@@ -11,11 +11,11 @@ class CartAPI {
         })
     }
 
-    removeCartItem(cardItemId: number){
+    async removeCartItem(cardItemId: number){
         this.data = this.data.filter(item => item.cartItemId !== cardItemId);
     }
 
-    getCartItemList() {
+    async getCartItemList() {
         return this.data;
     }
 }
