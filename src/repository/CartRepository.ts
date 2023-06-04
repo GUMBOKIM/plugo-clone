@@ -4,19 +4,20 @@ class CartAPI {
     data = CartData;
 
     async addCartItem(productInfo: Omit<Cart, 'cartItemId'>) {
-        const newCartItemId = this.data[this.data.length - 1].cartItemId;
-        this.data.push({
+        const newCartItemId = CartData[CartData.length - 1].cartItemId;
+        CartData.push({
             cartItemId: newCartItemId,
             ...productInfo
         })
     }
 
     async removeCartItem(cardItemId: number){
-        this.data = this.data.filter(item => item.cartItemId !== cardItemId);
+        // @ts-ignore
+        CartData = CartData.filter(item => item.cartItemId !== cardItemId);
     }
 
     async getCartItemList() {
-        return this.data;
+        return CartData;
     }
 }
 

@@ -11,20 +11,20 @@ const useProductQuery = () => {
         onSuccess: () => queryClient.invalidateQueries([queryKey.product])
     })
 
-    const getProductList = () => useQuery({
-        queryKey: [queryKey.product, "list"],
+    const useFetchProductList = () => useQuery({
+        queryKey: [queryKey.product, "LIST"],
         queryFn: ProductRepository.getProductList,
     })
 
-    const getProductDetail = (productId: number) => useQuery({
+    const useFetchProductDetail = (productId: number) => useQuery({
         queryKey: [queryKey.product, productId],
         queryFn: () => ProductRepository.getProduct(productId)
     })
 
     return {
         createProduct,
-        getProductList,
-        getProductDetail
+        useFetchProductList,
+        useFetchProductDetail
     }
 }
 

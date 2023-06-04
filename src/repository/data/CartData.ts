@@ -8,6 +8,6 @@ export interface Cart {
     }[]
 }
 
-const CartData: Cart[] = [];
+let CartData: Cart[] = [];
 
 export default CartData;
