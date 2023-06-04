@@ -9,7 +9,7 @@ interface CartProduct extends Cart {
 class CartAPI {
 
     async addCartItem(productInfo: Omit<Cart, 'cartItemId'>) {
-        const newCartItemId = CartData[CartData.length - 1]?.cartItemId ?? 1;
+        const newCartItemId = CartData.length > 0 ? CartData[CartData.length - 1].cartItemId + 1 : 1;
         CartData.push({
             cartItemId: newCartItemId,
             ...productInfo
@@ -17,8 +17,15 @@ class CartAPI {
     }
 
     async removeCartItem(cardItemId: number) {
-        // @ts-ignore
-        CartData = CartData.filter(item => item.cartItemId !== cardItemId);
+        const filterData =  CartData.filter(item => item.cartItemId !== cardItemId);
+        while(CartData.length !== 0) {
+            CartData.pop();
+        }
+
+        for (let i = 0; i < filterData.length; i++) {
+            CartData.push(filterData[i]);
+        }
+
     }
 
     async getCartItemList(): Promise<CartProduct[]> {
