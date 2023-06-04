@@ -4,6 +4,7 @@ export interface Product {
     desc: string;
     price: number;
     isStock: boolean;
+    stock?: number;
     images: string[];
     colorOption?: string[];
     options?: {
@@ -26,6 +27,7 @@ const ProductData: Product[]  = [
         desc: "태어나서부터 얼마 동안은 등의 씨앗으로부터 영양을 공급받아 크게 성장한다.",
         price: 10000,
         isStock: true,
+        stock: 3,
         images: ["https://data1.pokemonkorea.co.kr/newdata/pokedex/full/000101.png"]
     },
     {
@@ -34,6 +36,7 @@ const ProductData: Product[]  = [
         desc: "등의 봉오리가 부풀어 오르면 달콤한 냄새가 감돌기 시작한다. 큰 꽃이 필 조짐이다.",
         price: 20000,
         isStock: true,
+        stock: 100,
         images: ["https://data1.pokemonkorea.co.kr/newdata/pokedex/full/000201.png"]
     },
     {
@@ -42,6 +45,7 @@ const ProductData: Product[]  = [
         desc: "비가 내린 다음 날은 등의 꽃향기가 강해진다. 향기에 이끌려 포켓몬이 모여든다.",
         price: 30000,
         isStock: false,
+        stock: 100,
         images: ["https://data1.pokemonkorea.co.kr/newdata/pokedex/full/000301.png"]
     },
     {
@@ -50,6 +54,7 @@ const ProductData: Product[]  = [
         desc: "파이리 꼬리의 불꽃은 생명의 등불이다. 건강할 때는 불꽃도 강하게 타오른다.",
         price: 10000,
         isStock: true,
+        stock: 100,
         images: ["https://data1.pokemonkorea.co.kr/newdata/pokedex/full/000401.png"]
     },
     {
@@ -58,6 +63,7 @@ const ProductData: Product[]  = [
         desc: "리자드가 사는 바위산을 한밤중에 올려다보면 꼬리의 불꽃이 별처럼 보인다.",
         price: 20000,
         isStock: true,
+        stock: 100,
         images: ["https://data1.pokemonkorea.co.kr/newdata/pokedex/full/000501.png"]
     },
     {
@@ -66,6 +72,7 @@ const ProductData: Product[]  = [
         desc: "힘든 싸움을 경험한 리자몽일수록 불꽃 온도가 높아진다고 전해진다.",
         price: 30000,
         isStock: false,
+        stock: 100,
         images: ["https://data1.pokemonkorea.co.kr/newdata/pokedex/full/000601.png"]
     },
     {

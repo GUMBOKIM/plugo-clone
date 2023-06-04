@@ -5,7 +5,7 @@ export interface Cart {
     option?: {
         optionId: number;
         itemId: number;
-    }[]
+    };
 }
 
 let CartData: Cart[] = [];
