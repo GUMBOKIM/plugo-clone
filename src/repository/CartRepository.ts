@@ -4,7 +4,7 @@ class CartAPI {
     data = CartData;
 
     async addCartItem(productInfo: Omit<Cart, 'cartItemId'>) {
-        const newCartItemId = CartData[CartData.length - 1].cartItemId;
+        const newCartItemId = CartData[CartData.length - 1]?.cartItemId ?? 1;
         CartData.push({
             cartItemId: newCartItemId,
             ...productInfo

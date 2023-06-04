@@ -7,12 +7,12 @@ const useCartQuery = () => {
     const queryClient = useQueryClient();
 
     const addCartItem = useMutation({
-        onMutate: (itemInfo: Omit<Cart, 'cartItemId'>) => CartRepository.addCartItem(itemInfo),
+        mutationFn: (itemInfo: Omit<Cart, 'cartItemId'>) => CartRepository.addCartItem(itemInfo),
         onSuccess: () => queryClient.invalidateQueries([queryKey.cart])
     })
 
     const removeCartItem = useMutation({
-        onMutate: (cartItemId: number) => CartRepository.removeCartItem(cartItemId),
+        mutationFn: (cartItemId: number) => CartRepository.removeCartItem(cartItemId),
         onSuccess: () => queryClient.invalidateQueries([queryKey.cart])
     })
 
