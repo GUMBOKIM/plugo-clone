@@ -12,5 +12,5 @@ Bonus:
 - Admin: Create Product
 - Product List
 - Product Detail Page
-- Add to Cart Button
-- Cart Detail Page
+- Add to CartPage Button
+- CartPage Detail Page
